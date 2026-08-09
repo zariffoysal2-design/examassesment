@@ -1,0 +1,11 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "frontend/dist"
+
+# SPA fallback: any route not matching a real file should serve index.html
+# so client-side routing (React Router / in-app navigation) works on refresh.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,29 @@
+# Node dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+
+# Python / FastAPI backend
+backend/__pycache__/
+backend/*.pyc
+backend/venv/
+backend/.venv/
+.pytest_cache/
+
+# Environment secrets
+.env
+.env.local
+.env.production
+frontend/.env
+backend/.env
+
+# IDE and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: assessment-backend
+    runtime: python
+    repo: # fill in your git repo URL, or connect manually in the Render dashboard
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: TEST_DURATION_MINUTES
+        value: "60"
+      - key: FRONTEND_URL
+        sync: false   # set manually in Render dashboard, e.g. https://your-app.netlify.app
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
