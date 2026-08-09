@@ -19,12 +19,8 @@ PROBLEMS_DATA: List[Dict[str, Any]] = [
         "starter_code": """# Problem 1: Pass or Fail Grade Calculator
 score = int(input().strip())
 
-if score < 0 or score > 100:
-    print("INVALID")
-elif score >= 50:
-    print("PASS")
-else:
-    print("FAIL")
+# TODO: print "INVALID" if score is outside 0-100,
+# "PASS" if score >= 50, otherwise "FAIL"
 """,
         "sample_test_cases": [
             {"input": "75", "expected_output": "PASS"},
@@ -56,8 +52,7 @@ else:
         "starter_code": """# Problem 2: Sum of Even Numbers in Range
 L, R = map(int, input().split())
 
-total = sum(num for num in range(L, R + 1) if num % 2 == 0)
-print(total)
+# TODO: compute and print the sum of all even numbers in [L, R]
 """,
         "sample_test_cases": [
             {"input": "1 10", "expected_output": "30"},
@@ -90,7 +85,7 @@ print(total)
 n = int(input().strip())
 arr = list(map(int, input().split()))
 
-print(max(arr) - min(arr))
+# TODO: print the difference between the max and min values in arr
 """,
         "sample_test_cases": [
             {"input": "5\n3 10 2 8 1", "expected_output": "9"},
@@ -121,19 +116,15 @@ print(max(arr) - min(arr))
         "sample_output": "YES",
         "starter_code": """# Problem 4: Prime Palindrome Checker
 def is_prime(num):
-    if num <= 1:
-        return False
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
+    # TODO: return True if num is a prime number, False otherwise
+    pass
 
 def is_palindrome(num):
-    s = str(num)
-    return s == s[::-1]
+    # TODO: return True if num reads the same forward and backward
+    pass
 
 n = int(input().strip())
-print("YES" if is_prime(n) and is_palindrome(n) else "NO")
+# TODO: print "YES" if n is both prime and a palindrome, else "NO"
 """,
         "sample_test_cases": [
             {"input": "131", "expected_output": "YES"},
@@ -164,15 +155,9 @@ print("YES" if is_prime(n) and is_palindrome(n) else "NO")
         "sample_output": "3",
         "starter_code": """# Problem 5: Longest Substring Without Repeating Characters
 def longest_unique_substring(s):
-    char_map = {}
-    left = 0
-    max_len = 0
-    for right, char in enumerate(s):
-        if char in char_map and char_map[char] >= left:
-            left = char_map[char] + 1
-        char_map[char] = right
-        max_len = max(max_len, right - left + 1)
-    return max_len
+    # TODO: return the length of the longest substring of s
+    # that contains no repeating characters
+    pass
 
 s = input().strip()
 print(longest_unique_substring(s))
